@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laila Strazds | Gallery</title>
+  <meta name="description" content="A minimalist gallery website template for photography, art, and visual storytelling." />
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --surface: #ffffff;
+      --text: #1f1f1f;
+      --muted: #6e6a64;
+      --line: #ddd6cd;
+      --accent: #111111;
+      --max: 1280px;
+      --gap: 18px;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 2.5rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(246, 243, 238, 0.85);
+      border-bottom: 1px solid rgba(221, 214, 205, 0.85);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .hero-copy {
+      padding-right: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 0.84rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.6rem, 6vw, 5.6rem);
+      line-height: 0.96;
+      font-weight: 400;
+    }
+
+    .hero-copy p {
+      max-width: 36rem;
+      margin: 0 0 26px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--text);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--text);
+      color: #fff;
+    }
+
+    .button-secondary {
+      color: var(--text);
+    }
+
+    .hero-image-card {
+      background: var(--surface);
+      padding: 14px;
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(221, 214, 205, 0.65);
+    }
+
+    .hero-image {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    section {
+      padding: 34px 0 64px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+      font-weight: 400;
+    }
+
+    .section-subtitle {
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 6px 0 24px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font: inherit;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .chip.active,
+    .chip:hover,
+    .chip:focus-visible {
+      background: var(--text);
+      border-color: var(--text);
+      color: #fff;
+    }
+
+    .gallery-grid {
+      columns: 3 280px;
+      column-gap: var(--gap);
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin: 0 0 var(--gap);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(221, 214, 205, 0.65);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      transition: transform 0.45s ease, filter 0.3s ease;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:focus-visible img {
+      transform: scale(1.03);
+      filter: brightness(0.94);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 16px;
+      background: linear-gradient(to top, rgba(0,0,0,0.64), rgba(0,0,0,0));
+      color: #fff;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .gallery-item:hover .gallery-caption,
+    .gallery-item:focus-visible .gallery-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-caption strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .gallery-caption span {
+      font-size: 0.84rem;
+      opacity: 0.9;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-card,
+    .contact-card {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 2px);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card img {
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 14px;
+    }
+
+    .about-copy p,
+    .contact-card p {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0 44px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(17,17,17,0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      z-index: 100;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      width: min(1100px, 100%);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+      justify-items: center;
+    }
+
+    .lightbox img {
+      max-height: 78vh;
+      width: auto;
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .lightbox-meta {
+      width: min(700px, 100%);
+      color: #f2ede6;
+      text-align: center;
+    }
+
+    .lightbox-meta h3 {
+      margin: 0 0 6px;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .lightbox-meta p {
+      margin: 0;
+      color: rgba(242,237,230,0.78);
+    }
+
+    .lightbox-close,
+    .lightbox-nav {
+      position: absolute;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.18);
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .lightbox-close { top: 18px; right: 18px; }
+    .lightbox-nav.prev { left: 18px; }
+    .lightbox-nav.next { right: 18px; }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-copy {
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .lightbox {
+        padding: 18px;
+      }
+
+      .lightbox-nav.prev,
+      .lightbox-nav.next {
+        bottom: 22px;
+        top: auto;
+      }
+
+      .lightbox-nav.prev { left: 18px; }
+      .lightbox-nav.next { right: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-name">Laila Strazds</span>
+        <span class="brand-tag">Gallery & Visual Archive</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Artist / Photographer / Archivist</span>
+          <h1>Quiet, minimalist space for images that speak for themselves.</h1>
+          <p>
+            A clean gallery template inspired by editorial portfolio sites. Use it for photography,
+            travel images, visual essays, or a personal archive outside of Instagram.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#gallery">View Gallery</a>
+            <a class="button button-secondary" href="#about">About the Work</a>
+          </div>
+        </div>
+
+        <div class="hero-image-card">
+          <img
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?auto=format&fit=crop&w=1000&q=80"
+            alt="Featured artwork or photograph"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Selected Works</h2>
+            <p class="section-subtitle">You can swap these placeholder images with your own photos and sort them into themes.</p>
+          </div>
+        </div>
+
+        <div class="filter-bar" aria-label="Gallery filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="travel">Travel</button>
+          <button class="chip" data-filter="portrait">Portrait</button>
+          <button class="chip" data-filter="nature">Nature</button>
+          <button class="chip" data-filter="blackwhite">Black & White</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <article class="gallery-item" tabindex="0" data-category="travel" data-title="Desert Light" data-description="Atacama, Chile" data-image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Desert landscape" />
+            <div class="gallery-caption"><strong>Desert Light</strong><span>Travel</span></div>
+          </article>
+
+          <article class="gallery-item" tabindex="0" data-category="portrait" data-title="Stillness" data-description="Portrait study" data-image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Portrait" />
+            <div class="gallery-caption"><strong>Stillness</strong><span>Portrait</span></div>
+          </article>
+
+          <article class="gallery-item" tabindex="0" data-category="nature" data-title="Morning Edge" data-description="Coastal landscape" data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Nature landscape" />
+            <div class="gallery-caption"><strong>Morning Edge</strong><span>Nature</span></div>
+          </article>
+
+          <article class="gallery-item" tabindex="0" data-category="blackwhite" data-title="Threshold" data-description="Black and white architecture" data-image="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=900&q=80" alt="Black and white architecture" />
+            <div class="gallery-caption"><strong>Threshold</strong><span>Black & White</span></div>
+          </article>
+
+          <article class="gallery-item" tabindex="0" data-category="travel" data-title="Passage" data-description="Old city walk" data-image="https://images.unsplash.com/photo-1502920514313-52581002a659?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1502920514313-52581002a659?auto=format&fit=crop&w=900&q=80" alt="Travel street scene" />
+            <div class="gallery-caption"><strong>Passage</strong><span>Travel</span></div>
+          </article>
+
+          <article class="gallery-item" tabindex="0" data-category="nature" data-title="Wild Air" data-description="Mountain weather" data-image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Mountain landscape" />
+            <div class="gallery-caption"><strong>Wild Air</strong><span>Nature</span></div>
+          </article>
+
+          <article class="gallery-item" tabindex="0" data-category="portrait" data-title="Afterglow" data-description="Portrait in warm light" data-image="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80" alt="Portrait in warm light" />
+            <div class="gallery-caption"><strong>Afterglow</strong><span>Portrait</span></div>
+          </article>
+
+          <article class="gallery-item" tabindex="0" data-category="blackwhite" data-title="Window Study" data-description="Shadows and line" data-image="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Black and white scene" />
+            <div class="gallery-caption"><strong>Window Study</strong><span>Black & White</span></div>
+          </article>
+
+          <article class="gallery-item" tabindex="0" data-category="travel" data-title="Sea Road" data-description="Madeira coastline" data-image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Ocean coastline" />
+            <div class="gallery-caption"><strong>Sea Road</strong><span>Travel</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-card">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="About image" />
+          <strong>Available for exhibitions, collaborations, and commissions.</strong>
+        </div>
+
+        <div class="about-copy">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">About</h2>
+              <p class="section-subtitle">Replace this text with your own short artist statement or bio.</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <p>
+              I’m a Toronto-based visual storyteller drawn to atmosphere, texture, and moments that feel quietly alive.
+              This template is designed to let the images lead while still giving you room for a short statement,
+              exhibition notes, or project context.
+            </p>
+            <p>
+              You could use this section for an artist bio, a note about your creative practice, or a description of how
+              the gallery is organized.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Add your email, Instagram, or newsletter link here.</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <p>For commissions, collaborations, prints, or just to say hello:</p>
+          <div class="contact-links">
+            <a class="button button-primary" href="mailto:youremail@example.com">Email Me</a>
+            <a class="button button-secondary" href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Laila Strazds</span>
+      <span>Built for GitHub Pages</span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Expanded gallery image">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">✕</button>
+    <button class="lightbox-nav prev" id="prevBtn" aria-label="Previous image">←</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="Expanded gallery image" />
+      <div class="lightbox-meta">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDescription"></p>
+      </div>
+    </div>
+    <button class="lightbox-nav next" id="nextBtn" aria-label="Next image">→</button>
+  </div>
+
+  <script>
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDescription = document.getElementById('lightboxDescription');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const year = document.getElementById('year');
+
+    let currentFilter = 'all';
+    let visibleItems = [...galleryItems];
+    let currentIndex = 0;
+
+    year.textContent = new Date().getFullYear();
+
+    function applyFilter(filter) {
+      currentFilter = filter;
+      galleryItems.forEach(item => {
+        const category = item.dataset.category;
+        const shouldShow = filter === 'all' || category === filter;
+        item.style.display = shouldShow ? 'block' : 'none';
+      });
+      visibleItems = galleryItems.filter(item => item.style.display !== 'none');
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        applyFilter(chip.dataset.filter);
+      });
+    });
+
+    function openLightbox(item) {
+      visibleItems = galleryItems.filter(entry => entry.style.display !== 'none');
+      currentIndex = visibleItems.indexOf(item);
+      const image = item.dataset.image;
+      const title = item.dataset.title;
+      const description = item.dataset.description;
+
+      lightboxImg.src = image;
+      lightboxTitle.textContent = title;
+      lightboxDescription.textContent = description;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function showRelativeImage(direction) {
+      if (!visibleItems.length) return;
+      currentIndex = (currentIndex + direction + visibleItems.length) % visibleItems.length;
+      openLightbox(visibleItems[currentIndex]);
+    }
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => openLightbox(item));
+      item.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openLightbox(item);
+        }
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', () => showRelativeImage(-1));
+    nextBtn.addEventListener('click', () => showRelativeImage(1));
+
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', event => {
+      if (!lightbox.classList.contains('open')) return;
+      if (event.key === 'Escape') closeLightbox();
+      if (event.key === 'ArrowRight') showRelativeImage(1);
+      if (event.key === 'ArrowLeft') showRelativeImage(-1);
+    });
+
+    applyFilter('all');
+  </script>
+</body>
+</html>
