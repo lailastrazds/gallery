@@ -4,34 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Laila Strazds | Gallery</title>
-  <meta name="description" content="A minimalist gallery website template for photography, art, and visual storytelling." />
+  <meta name="description" content="These images gather moments in time and embeddedness: a shift in light, a shoreline under pressure, a trace of the weather that moves through our lives. In them, I return to the reciprocity between ourselves and our surroundings—the ways we move our environment, and the ways the environment moves us in return. This collection holds fragments of that relation, of being embedded within a world that is always in motion." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f6f3ee;
-      --surface: #ffffff;
-      --text: #1f1f1f;
-      --muted: #6e6a64;
-      --line: #ddd6cd;
-      --accent: #111111;
-      --max: 1280px;
-      --gap: 18px;
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,0.05);
+      --bg: #ecebe8;
+      --surface: #f7f6f3;
+      --text: #141414;
+      --muted: #5e5c57;
+      --line: #d3cec6;
+      --max: 1440px;
+      --gap: 26px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.03);
+      --header-font: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --mono-font: "IBM Plex Mono", monospace;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
       background: var(--bg);
-      line-height: 1.5;
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     a {
@@ -39,56 +45,74 @@
       text-decoration: none;
     }
 
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
     .container {
-      width: min(calc(100% - 2.5rem), var(--max));
+      width: min(calc(100% - 4rem), var(--max));
       margin: 0 auto;
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 40;
       backdrop-filter: blur(12px);
-      background: rgba(246, 243, 238, 0.85);
-      border-bottom: 1px solid rgba(221, 214, 205, 0.85);
+      background: rgba(236, 235, 232, 0.9);
+      border-bottom: 1px solid rgba(211, 206, 198, 0.85);
     }
 
     .nav {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 72px;
       gap: 24px;
     }
 
     .brand {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
+    }
+
+    .brand-name,
+    .nav-links a,
+    .eyebrow,
+    .chip,
+    .meta-label,
+    .footer-row,
+    .lightbox-meta p,
+    .section-kicker,
+    .hero-note {
+      font-family: var(--mono-font);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .brand-name {
-      font-size: 1rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-size: 0.95rem;
     }
 
     .brand-tag {
-      font-size: 0.78rem;
-      color: var(--muted);
+      font-family: var(--mono-font);
+      font-size: 0.72rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      color: var(--muted);
     }
 
     .nav-links {
       display: flex;
       gap: 22px;
-      font-size: 0.92rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
+      font-size: 0.83rem;
       position: relative;
       padding-bottom: 4px;
     }
@@ -100,10 +124,10 @@
       bottom: 0;
       width: 100%;
       height: 1px;
-      background: var(--accent);
+      background: var(--text);
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.25s ease;
+      transition: transform 0.24s ease;
     }
 
     .nav-links a:hover::after,
@@ -112,63 +136,76 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 92px 0 52px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: end;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 42px;
+      align-items: start;
     }
 
-    .hero-copy {
-      padding-right: 24px;
-    }
-
-    .eyebrow {
+    .eyebrow,
+    .section-kicker {
       display: inline-block;
-      margin-bottom: 18px;
-      font-size: 0.84rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-size: 0.76rem;
       color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--header-font);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.94;
+      margin: 0;
     }
 
     h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.6rem, 6vw, 5.6rem);
-      line-height: 0.96;
-      font-weight: 400;
+      font-size: clamp(3.2rem, 8vw, 7.4rem);
+      max-width: 10ch;
+      margin-bottom: 20px;
     }
 
     .hero-copy p {
-      max-width: 36rem;
-      margin: 0 0 26px;
-      font-size: 1.08rem;
+      max-width: 42rem;
+      margin: 0 0 28px;
       color: var(--muted);
+      font-size: 1.06rem;
     }
 
-    .hero-actions {
+    .hero-note {
+      max-width: 34rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.7;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .button-row {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 20px;
     }
 
     .button {
+      min-height: 46px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
       padding: 0 18px;
-      border-radius: 999px;
       border: 1px solid var(--text);
-      font-size: 0.92rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-      cursor: pointer;
       background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+      font-family: var(--mono-font);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .button:hover,
@@ -178,179 +215,189 @@
 
     .button-primary {
       background: var(--text);
-      color: #fff;
+      color: var(--surface);
     }
 
-    .button-secondary {
-      color: var(--text);
-    }
-
-    .hero-image-card {
-      background: var(--surface);
-      padding: 14px;
-      border-radius: calc(var(--radius) + 6px);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(221, 214, 205, 0.65);
+    .hero-image-wrap {
+      padding: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
     }
 
     .hero-image {
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: var(--radius);
+      width: 100%;
+      border: 1px solid rgba(211, 206, 198, 0.95);
+      background: #fff;
     }
 
     section {
-      padding: 34px 0 64px;
+      padding: 42px 0 84px;
     }
 
     .section-header {
       display: flex;
-      align-items: end;
       justify-content: space-between;
+      align-items: end;
       gap: 18px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .section-title {
-      margin: 0;
-      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-      font-weight: 400;
+      font-size: clamp(2rem, 3vw, 3.4rem);
+      margin-bottom: 8px;
     }
 
     .section-subtitle {
-      margin: 6px 0 0;
+      max-width: 46rem;
       color: var(--muted);
-      max-width: 40rem;
+      margin: 0;
     }
 
     .filter-bar {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin: 6px 0 24px;
+      margin: 0 0 34px;
     }
 
     .chip {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.55);
-      color: var(--text);
-      border-radius: 999px;
       padding: 10px 14px;
-      font: inherit;
-      font-size: 0.88rem;
+      border: 1px solid var(--line);
+      background: rgba(247, 246, 243, 0.45);
+      color: var(--text);
       cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      font-size: 0.76rem;
     }
 
     .chip.active,
     .chip:hover,
     .chip:focus-visible {
       background: var(--text);
+      color: var(--surface);
       border-color: var(--text);
-      color: #fff;
     }
 
     .gallery-grid {
-      columns: 3 280px;
-      column-gap: var(--gap);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px 30px;
     }
 
     .gallery-item {
-      break-inside: avoid;
-      margin: 0 0 var(--gap);
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      overflow: hidden;
       cursor: pointer;
       position: relative;
-      overflow: hidden;
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(221, 214, 205, 0.65);
     }
 
     .gallery-item img {
       width: 100%;
-      transition: transform 0.45s ease, filter 0.3s ease;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 1px solid rgba(211, 206, 198, 0.95);
+      background: #fff;
+      transition: transform 0.35s ease, opacity 0.25s ease;
     }
 
     .gallery-item:hover img,
     .gallery-item:focus-visible img {
-      transform: scale(1.03);
-      filter: brightness(0.94);
+      transform: translateY(-2px);
+      opacity: 0.96;
     }
 
     .gallery-caption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 16px;
-      background: linear-gradient(to top, rgba(0,0,0,0.64), rgba(0,0,0,0));
-      color: #fff;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    .gallery-item:hover .gallery-caption,
-    .gallery-item:focus-visible .gallery-caption {
+      position: static;
+      padding: 14px 0 0;
+      background: transparent;
+      color: var(--text);
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
+      transition: none;
     }
 
     .gallery-caption strong {
       display: block;
-      font-size: 1rem;
-      font-weight: 400;
+      font-family: var(--header-font);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
     }
 
     .gallery-caption span {
-      font-size: 0.84rem;
-      opacity: 0.9;
-      letter-spacing: 0.04em;
+      display: inline-block;
+      margin-top: 6px;
+      font-family: var(--mono-font);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      color: var(--muted);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
-      gap: 28px;
+      grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
+      gap: 52px;
       align-items: start;
     }
 
-    .about-card,
-    .contact-card {
-      background: rgba(255,255,255,0.62);
-      border: 1px solid var(--line);
-      border-radius: calc(var(--radius) + 2px);
-      padding: 24px;
-      box-shadow: var(--shadow);
+    .panel {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 0;
     }
 
-    .about-card img {
-      aspect-ratio: 4/5;
+    .about-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 16px;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(211, 206, 198, 0.95);
+      background: #fff;
     }
 
-    .about-copy p,
-    .contact-card p {
+    .panel p {
+      margin: 0 0 18px;
       color: var(--muted);
-      margin-top: 0;
+      font-size: 1rem;
+      max-width: 52rem;
     }
 
-    .contact-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 18px;
+    .panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta-stack {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .meta-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .meta-value {
+      font-family: var(--header-font);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.25;
     }
 
     .site-footer {
       border-top: 1px solid var(--line);
-      padding: 26px 0 44px;
-      color: var(--muted);
-      font-size: 0.92rem;
+      padding: 28px 0 42px;
     }
 
     .footer-row {
@@ -358,16 +405,18 @@
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.72rem;
     }
 
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(17,17,17,0.92);
+      background: rgba(12, 12, 12, 0.94);
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 32px;
+      padding: 26px;
       z-index: 100;
     }
 
@@ -376,101 +425,97 @@
     }
 
     .lightbox-inner {
-      width: min(1100px, 100%);
+      width: min(1180px, 100%);
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 16px;
       justify-items: center;
+      gap: 18px;
     }
 
     .lightbox img {
-      max-height: 78vh;
       width: auto;
-      border-radius: 18px;
+      max-width: min(88vw, 900px);
+      max-height: 76vh;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #fff;
       box-shadow: 0 20px 60px rgba(0,0,0,0.35);
     }
 
     .lightbox-meta {
-      width: min(700px, 100%);
-      color: #f2ede6;
+      width: min(760px, 100%);
       text-align: center;
+      color: #f4f1ea;
     }
 
     .lightbox-meta h3 {
-      margin: 0 0 6px;
-      font-size: 1.4rem;
-      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin-bottom: 8px;
     }
 
     .lightbox-meta p {
       margin: 0;
-      color: rgba(242,237,230,0.78);
+      color: rgba(244, 241, 234, 0.76);
+      font-size: 0.8rem;
     }
 
     .lightbox-close,
     .lightbox-nav {
       position: absolute;
-      background: rgba(255,255,255,0.12);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.18);
       width: 48px;
       height: 48px;
-      border-radius: 999px;
       display: grid;
       place-items: center;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.14);
       cursor: pointer;
-      font-size: 1.2rem;
-      backdrop-filter: blur(10px);
+      font-size: 1.15rem;
     }
 
-    .lightbox-close { top: 18px; right: 18px; }
-    .lightbox-nav.prev { left: 18px; }
-    .lightbox-nav.next { right: 18px; }
+    .lightbox-close { top: 16px; right: 16px; }
+    .lightbox-nav.prev { left: 16px; }
+    .lightbox-nav.next { right: 16px; }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1080px) {
       .hero-grid,
       .about-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 56px;
-      }
-
-      .hero-copy {
-        padding-right: 0;
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 1.5rem), var(--max));
+      }
+
       .nav {
-        flex-direction: column;
         align-items: flex-start;
+        flex-direction: column;
         padding: 14px 0;
       }
 
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 14px;
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .lightbox {
-        padding: 18px;
+        padding: 16px;
       }
 
       .lightbox-nav.prev,
       .lightbox-nav.next {
-        bottom: 22px;
+        bottom: 16px;
         top: auto;
       }
-
-      .lightbox-nav.prev { left: 18px; }
-      .lightbox-nav.next { right: 18px; }
     }
   </style>
 </head>
@@ -479,7 +524,7 @@
     <div class="container nav">
       <a class="brand" href="#top">
         <span class="brand-name">Laila Strazds</span>
-        <span class="brand-tag">Gallery & Visual Archive</span>
+        <span class="brand-tag">Photographic works / built, borrowed, between</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#gallery">Gallery</a>
@@ -493,24 +538,21 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Artist / Photographer / Archivist</span>
-          <h1>Quiet, minimalist space for images that speak for themselves.</h1>
+          <span class="eyebrow">Landscape / architecture / relation</span>
+          <h1>Images gathered at the edges of relation.</h1>
           <p>
-            A clean gallery template inspired by editorial portfolio sites. Use it for photography,
-            travel images, visual essays, or a personal archive outside of Instagram.
+            This gallery brings together square-framed photographs shaped by landscape, weather, structure, and the subtle relations between them. The work moves between ecological presence and human inscription, attending to how places are not simply observed, but entered, felt, and co-composed.
           </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#gallery">View Gallery</a>
-            <a class="button button-secondary" href="#about">About the Work</a>
+          <div class="button-row">
+            <a class="button button-primary" href="#gallery">Enter gallery</a>
+            <a class="button" href="#about">Read statement</a>
           </div>
+          <p class="hero-note">
+            Categories are organized as <strong>Borrowed</strong>, <strong>Built</strong>, and <strong>Between</strong>—a way of holding land, structure, and the spaces of relation that cannot be cleanly separated.
+          </p>
         </div>
-
-        <div class="hero-image-card">
-          <img
-            class="hero-image"
-            src="https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?auto=format&fit=crop&w=1000&q=80"
-            alt="Featured artwork or photograph"
-          />
+        <div class="hero-image-wrap">
+          <img class="hero-image" src="images/featured.jpg" alt="Featured landscape photograph" />
         </div>
       </div>
     </section>
@@ -519,91 +561,88 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Selected Works</h2>
-            <p class="section-subtitle">You can swap these placeholder images with your own photos and sort them into themes.</p>
+            <span class="section-kicker">Selected works</span>
+            <h2 class="section-title">Gallery</h2>
+            <p class="section-subtitle">A clean square grid for white-framed images. Replace the placeholder file paths with your own photographs inside the images folder.</p>
           </div>
         </div>
 
         <div class="filter-bar" aria-label="Gallery filters">
           <button class="chip active" data-filter="all">All</button>
-          <button class="chip" data-filter="travel">Travel</button>
-          <button class="chip" data-filter="portrait">Portrait</button>
-          <button class="chip" data-filter="nature">Nature</button>
-          <button class="chip" data-filter="blackwhite">Black & White</button>
+          <button class="chip" data-filter="borrowed">Borrowed</button>
+          <button class="chip" data-filter="built">Built</button>
+          <button class="chip" data-filter="between">Between</button>
         </div>
 
         <div class="gallery-grid" id="galleryGrid">
-          <article class="gallery-item" tabindex="0" data-category="travel" data-title="Desert Light" data-description="Atacama, Chile" data-image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Desert landscape" />
-            <div class="gallery-caption"><strong>Desert Light</strong><span>Travel</span></div>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="Coastal Shelf" data-description="Borrowed" data-image="images/coastal-shelf.jpg">
+            <img src="images/coastal-shelf.jpg" alt="Coastal landscape" />
+            <div class="gallery-caption"><strong>Coastal Shelf</strong><span>Borrowed</span></div>
           </article>
 
-          <article class="gallery-item" tabindex="0" data-category="portrait" data-title="Stillness" data-description="Portrait study" data-image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Portrait" />
-            <div class="gallery-caption"><strong>Stillness</strong><span>Portrait</span></div>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="Edge Conditions" data-description="Between" data-image="images/edge-conditions.jpg">
+            <img src="images/edge-conditions.jpg" alt="Landscape meeting water" />
+            <div class="gallery-caption"><strong>Edge Conditions</strong><span>Between</span></div>
           </article>
 
-          <article class="gallery-item" tabindex="0" data-category="nature" data-title="Morning Edge" data-description="Coastal landscape" data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Nature landscape" />
-            <div class="gallery-caption"><strong>Morning Edge</strong><span>Nature</span></div>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="Retaining Line" data-description="Built" data-image="images/retaining-line.jpg">
+            <img src="images/retaining-line.jpg" alt="Architectural or built structure" />
+            <div class="gallery-caption"><strong>Retaining Line</strong><span>Built</span></div>
           </article>
 
-          <article class="gallery-item" tabindex="0" data-category="blackwhite" data-title="Threshold" data-description="Black and white architecture" data-image="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80">
-            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=900&q=80" alt="Black and white architecture" />
-            <div class="gallery-caption"><strong>Threshold</strong><span>Black & White</span></div>
+          <article class="gallery-item" tabindex="0" 
+
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="Water Memory" data-description="Borrowed" data-image="images/water-memory.jpg">
+            <img src="images/water-memory.jpg" alt="Lake or ocean scene" />
+            <div class="gallery-caption"><strong>Water Memory</strong><span>Borrowed</span></div>
           </article>
 
-          <article class="gallery-item" tabindex="0" data-category="travel" data-title="Passage" data-description="Old city walk" data-image="https://images.unsplash.com/photo-1502920514313-52581002a659?auto=format&fit=crop&w=1200&q=80">
-            <img src="https://images.unsplash.com/photo-1502920514313-52581002a659?auto=format&fit=crop&w=900&q=80" alt="Travel street scene" />
-            <div class="gallery-caption"><strong>Passage</strong><span>Travel</span></div>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="Concrete Quiet" data-description="Built" data-image="images/concrete-quiet.jpg">
+            <img src="images/concrete-quiet.jpg" alt="Building detail" />
+            <div class="gallery-caption"><strong>Concrete Quiet</strong><span>Built</span></div>
           </article>
 
-          <article class="gallery-item" tabindex="0" data-category="nature" data-title="Wild Air" data-description="Mountain weather" data-image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80">
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Mountain landscape" />
-            <div class="gallery-caption"><strong>Wild Air</strong><span>Nature</span></div>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="Where It Gives" data-description="Between" data-image="images/where-it-gives.jpg">
+            <img src="images/where-it-gives.jpg" alt="Boundary between built and natural space" />
+            <div class="gallery-caption"><strong>Where It Gives</strong><span>Between</span></div>
           </article>
 
-          <article class="gallery-item" tabindex="0" data-category="portrait" data-title="Afterglow" data-description="Portrait in warm light" data-image="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1200&q=80">
-            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80" alt="Portrait in warm light" />
-            <div class="gallery-caption"><strong>Afterglow</strong><span>Portrait</span></div>
-          </article>
-
-          <article class="gallery-item" tabindex="0" data-category="blackwhite" data-title="Window Study" data-description="Shadows and line" data-image="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Black and white scene" />
-            <div class="gallery-caption"><strong>Window Study</strong><span>Black & White</span></div>
-          </article>
-
-          <article class="gallery-item" tabindex="0" data-category="travel" data-title="Sea Road" data-description="Madeira coastline" data-image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Ocean coastline" />
-            <div class="gallery-caption"><strong>Sea Road</strong><span>Travel</span></div>
-          </article>
+          <article class="gallery-item" tabindex="0" 
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="container about-grid">
-        <div class="about-card">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80" alt="About image" />
-          <strong>Available for exhibitions, collaborations, and commissions.</strong>
-        </div>
-
-        <div class="about-copy">
-          <div class="section-header">
+        <div class="panel">
+          <img class="about-image" src="images/about-image.jpg" alt="Landscape photograph" />
+          <div class="meta-stack">
             <div>
-              <h2 class="section-title">About</h2>
-              <p class="section-subtitle">Replace this text with your own short artist statement or bio.</p>
+              <div class="meta-label">Research interests</div>
+              <div class="meta-value">Relationality, intra-action, ecological entanglement, mental health, imagination, multispecies futures, arts-based and immersive inquiry</div>
+            </div>
+            <div>
+              <div class="meta-label">Based in</div>
+              <div class="meta-value">Toronto, Canada</div>
             </div>
           </div>
-          <div class="contact-card">
+        </div>
+
+        <div>
+          <div class="section-header">
+            <div>
+              <span class="section-kicker">About / artist statement</span>
+              <h2 class="section-title">Statement</h2>
+            </div>
+          </div>
+
+          <div class="panel">
             <p>
-              I’m a Toronto-based visual storyteller drawn to atmosphere, texture, and moments that feel quietly alive.
-              This template is designed to let the images lead while still giving you room for a short statement,
-              exhibition notes, or project context.
+              I am drawn to creation as a way of studying relation. These photographs begin with landscape, atmosphere, and the built environment, but they are less about documenting scene than about tracing encounter—how bodies, weather, structure, memory, and more-than-human life participate in shaping what becomes visible.
             </p>
             <p>
-              You could use this section for an artist bio, a note about your creative practice, or a description of how
-              the gallery is organized.
+              Much of this work is informed by my broader research interests in relationality, intra-action, ecological entanglement, mental health, and the role of imagination in sensing and creating more liveable futures. I am interested in how art can help us feel our relation within the world rather than reinforce the myth of being separate from it. In this sense, photography becomes not only an aesthetic practice, but also a way of noticing how place acts on us, how we act within it, and how life itself is co-constituted.
+            </p>
             </p>
           </div>
         </div>
@@ -614,16 +653,17 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Contact</h2>
-            <p class="section-subtitle">Add your email, Instagram, or newsletter link here.</p>
+            <span class="section-kicker">Contact</span>
+            <h2 class="section-title">Get in touch</h2>
+            <p class="section-subtitle">.</p>
           </div>
         </div>
 
-        <div class="contact-card">
-          <p>For commissions, collaborations, prints, or just to say hello:</p>
-          <div class="contact-links">
-            <a class="button button-primary" href="mailto:youremail@example.com">Email Me</a>
-            <a class="button button-secondary" href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+        <div class="panel">
+          <p>For collaborations, exhibitions, prints, or conversation:</p>
+          <div class="button-row">
+            <a class="button button-primary" href="mailto:laila.strazds@gmail.com">Email</a>
+            <a class="button" href="https://instagram.com/laila.strazds" target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </div>
       </div>
@@ -662,18 +702,16 @@
     const nextBtn = document.getElementById('nextBtn');
     const year = document.getElementById('year');
 
-    let currentFilter = 'all';
     let visibleItems = [...galleryItems];
     let currentIndex = 0;
 
     year.textContent = new Date().getFullYear();
 
     function applyFilter(filter) {
-      currentFilter = filter;
       galleryItems.forEach(item => {
         const category = item.dataset.category;
-        const shouldShow = filter === 'all' || category === filter;
-        item.style.display = shouldShow ? 'block' : 'none';
+        const show = filter === 'all' || category === filter;
+        item.style.display = show ? 'block' : 'none';
       });
       visibleItems = galleryItems.filter(item => item.style.display !== 'none');
     }
@@ -689,13 +727,9 @@
     function openLightbox(item) {
       visibleItems = galleryItems.filter(entry => entry.style.display !== 'none');
       currentIndex = visibleItems.indexOf(item);
-      const image = item.dataset.image;
-      const title = item.dataset.title;
-      const description = item.dataset.description;
-
-      lightboxImg.src = image;
-      lightboxTitle.textContent = title;
-      lightboxDescription.textContent = description;
+      lightboxImg.src = item.dataset.image;
+      lightboxTitle.textContent = item.dataset.title;
+      lightboxDescription.textContent = item.dataset.description;
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
@@ -707,15 +741,18 @@
       document.body.style.overflow = '';
     }
 
-    function showRelativeImage(direction) {
+    function moveLightbox(step) {
       if (!visibleItems.length) return;
-      currentIndex = (currentIndex + direction + visibleItems.length) % visibleItems.length;
-      openLightbox(visibleItems[currentIndex]);
+      currentIndex = (currentIndex + step + visibleItems.length) % visibleItems.length;
+      const item = visibleItems[currentIndex];
+      lightboxImg.src = item.dataset.image;
+      lightboxTitle.textContent = item.dataset.title;
+      lightboxDescription.textContent = item.dataset.description;
     }
 
     galleryItems.forEach(item => {
       item.addEventListener('click', () => openLightbox(item));
-      item.addEventListener('keydown', event => {
+      item.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           openLightbox(item);
@@ -724,18 +761,18 @@
     });
 
     lightboxClose.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', () => showRelativeImage(-1));
-    nextBtn.addEventListener('click', () => showRelativeImage(1));
+    prevBtn.addEventListener('click', () => moveLightbox(-1));
+    nextBtn.addEventListener('click', () => moveLightbox(1));
 
-    lightbox.addEventListener('click', event => {
+    lightbox.addEventListener('click', (event) => {
       if (event.target === lightbox) closeLightbox();
     });
 
-    document.addEventListener('keydown', event => {
+    document.addEventListener('keydown', (event) => {
       if (!lightbox.classList.contains('open')) return;
       if (event.key === 'Escape') closeLightbox();
-      if (event.key === 'ArrowRight') showRelativeImage(1);
-      if (event.key === 'ArrowLeft') showRelativeImage(-1);
+      if (event.key === 'ArrowRight') moveLightbox(1);
+      if (event.key === 'ArrowLeft') moveLightbox(-1);
     });
 
     applyFilter('all');
