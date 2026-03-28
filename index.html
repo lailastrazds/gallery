@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Laila Strazds | Gallery</title>
-  <meta name="description" content="These images gather moments in time and embeddedness: a shift in light, a shoreline under pressure, a trace of the weather that moves through our lives. In them, I return to the reciprocity between ourselves and our surroundings—the ways we move our environment, and the ways the environment moves us in return. This collection holds fragments of that relation, of being embedded within a world that is always in motion." />
+  <meta name="description" content="A minimalist gallery website for landscape images, visual research, and photographic entanglements." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
@@ -313,7 +313,7 @@
 
     .gallery-caption {
       position: static;
-      padding: 14px 0 0;
+      padding: 10px 0 0;
       background: transparent;
       color: var(--text);
       opacity: 1;
@@ -322,17 +322,12 @@
     }
 
     .gallery-caption strong {
-      display: block;
-      font-family: var(--header-font);
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.02;
-      letter-spacing: -0.03em;
+      display: none;
     }
 
     .gallery-caption span {
       display: inline-block;
-      margin-top: 6px;
+      margin-top: 0;
       font-family: var(--mono-font);
       font-size: 0.72rem;
       letter-spacing: 0.08em;
@@ -446,15 +441,9 @@
       color: #f4f1ea;
     }
 
-    .lightbox-meta h3 {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      margin-bottom: 8px;
-    }
-
+    .lightbox-meta h3,
     .lightbox-meta p {
-      margin: 0;
-      color: rgba(244, 241, 234, 0.76);
-      font-size: 0.8rem;
+      display: none;
     }
 
     .lightbox-close,
@@ -524,7 +513,7 @@
     <div class="container nav">
       <a class="brand" href="#top">
         <span class="brand-name">Laila Strazds</span>
-        <span class="brand-tag">Photographic works / built, borrowed, between</span>
+        <span class="brand-tag">Photographic works / built-form, borrowed, between</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#gallery">Gallery</a>
@@ -538,21 +527,21 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Landscape / architecture / relation</span>
+          <span class="eyebrow">Landscape / built-form / relation</span>
           <h1>Images gathered at the edges of relation.</h1>
           <p>
-            This gallery brings together square-framed photographs shaped by landscape, weather, structure, and the subtle relations between them. The work moves between ecological presence and human inscription, attending to how places are not simply observed, but entered, felt, and co-composed.
+            These images gather moments in time and embeddedness. In them, I return to the reciprocity between ourselves and our surroundings—the ways we move our environment, and the ways the environment moves us in return. This collection holds fragments of that relation, of being embedded within a world that is always in motion.
           </p>
           <div class="button-row">
             <a class="button button-primary" href="#gallery">Enter gallery</a>
             <a class="button" href="#about">Read statement</a>
           </div>
           <p class="hero-note">
-            Categories are organized as <strong>Borrowed</strong>, <strong>Built</strong>, and <strong>Between</strong>—a way of holding land, structure, and the spaces of relation that cannot be cleanly separated.
+            Categories are organized as <strong>Borrowed</strong>, <strong>Built-form</strong>, and <strong>Between</strong>—a way of holding land, structure, and the spaces of relation that cannot be cleanly separated.
           </p>
         </div>
         <div class="hero-image-wrap">
-          <img class="hero-image" src="images/featured.jpg" alt="Featured landscape photograph" />
+          <img class="hero-image" src="images/open.png" alt="Featured image" />
         </div>
       </div>
     </section>
@@ -563,51 +552,227 @@
           <div>
             <span class="section-kicker">Selected works</span>
             <h2 class="section-title">Gallery</h2>
-            <p class="section-subtitle">A clean square grid for white-framed images. Replace the placeholder file paths with your own photographs inside the images folder.</p>
+            <p class="section-subtitle">A clean square grid for white-framed images, organized by built-form, borrowed, and between.</p>
           </div>
         </div>
 
         <div class="filter-bar" aria-label="Gallery filters">
           <button class="chip active" data-filter="all">All</button>
           <button class="chip" data-filter="borrowed">Borrowed</button>
-          <button class="chip" data-filter="built">Built</button>
+          <button class="chip" data-filter="built">Built-form</button>
           <button class="chip" data-filter="between">Between</button>
         </div>
 
         <div class="gallery-grid" id="galleryGrid">
-          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="Coastal Shelf" data-description="Borrowed" data-image="images/coastal-shelf.jpg">
-            <img src="images/coastal-shelf.jpg" alt="Coastal landscape" />
-            <div class="gallery-caption"><strong>Coastal Shelf</strong><span>Borrowed</span></div>
-          </article>
+          <!-- Between images -->
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between1.jpg"><img src="images/between1.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between2.jpg"><img src="images/between2.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between3.jpg"><img src="images/between3.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between4.jpg"><img src="images/between4.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between5.jpg"><img src="images/between5.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between6.jpg"><img src="images/between6.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between7.jpg"><img src="images/between7.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between8.jpg"><img src="images/between8.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between9.jpg"><img src="images/between9.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between10.jpg"><img src="images/between10.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between11.jpg"><img src="images/between11.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between12.jpg"><img src="images/between12.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between13.jpg"><img src="images/between13.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between14.jpg"><img src="images/between14.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between15.jpg"><img src="images/between15.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between16.jpg"><img src="images/between16.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between17.jpg"><img src="images/between17.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between18.jpg"><img src="images/between18.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between19.jpg"><img src="images/between19.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between20.jpg"><img src="images/between20.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between21.jpg"><img src="images/between21.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between22.jpg"><img src="images/between22.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between23.jpg"><img src="images/between23.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between24.jpg"><img src="images/between24.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between25.jpg"><img src="images/between25.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between26.jpg"><img src="images/between26.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between27.jpg"><img src="images/between27.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between28.jpg"><img src="images/between28.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between29.jpg"><img src="images/between29.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between30.jpg"><img src="images/between30.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between31.jpg"><img src="images/between31.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between32.jpg"><img src="images/between32.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between33.jpg"><img src="images/between33.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between34.jpg"><img src="images/between34.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between35.jpg"><img src="images/between35.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between36.jpg"><img src="images/between36.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between37.jpg"><img src="images/between37.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between38.jpg"><img src="images/between38.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between39.jpg"><img src="images/between39.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between40.jpg"><img src="images/between40.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between41.jpg"><img src="images/between41.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between42.jpg"><img src="images/between42.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between43.jpg"><img src="images/between43.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between44.jpg"><img src="images/between44.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between45.jpg"><img src="images/between45.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between46.jpg"><img src="images/between46.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between47.jpg"><img src="images/between47.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between48.jpg"><img src="images/between48.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between49.jpg"><img src="images/between49.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between50.jpg"><img src="images/between50.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between51.jpg"><img src="images/between51.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between52.jpg"><img src="images/between52.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between53.jpg"><img src="images/between53.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between54.jpg"><img src="images/between54.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between55.jpg"><img src="images/between55.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between56.jpg"><img src="images/between56.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between57.jpg"><img src="images/between57.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between58.jpg"><img src="images/between58.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between59.jpg"><img src="images/between59.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between60.jpg"><img src="images/between60.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between61.jpg"><img src="images/between61.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between62.jpg"><img src="images/between62.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="images/between63.jpg"><img src="images/between63.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
 
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="Edge Conditions" data-description="Between" data-image="images/edge-conditions.jpg">
-            <img src="images/edge-conditions.jpg" alt="Landscape meeting water" />
-            <div class="gallery-caption"><strong>Edge Conditions</strong><span>Between</span></div>
-          </article>
+          <!-- Built-form images -->
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built1.jpg"><img src="images/built1.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built2.jpg"><img src="images/built2.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built3.jpg"><img src="images/built3.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built4.jpg"><img src="images/built4.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built5.jpg"><img src="images/built5.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built6.jpg"><img src="images/built6.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built7.jpg"><img src="images/built7.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built8.jpg"><img src="images/built8.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built9.jpg"><img src="images/built9.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built10.jpg"><img src="images/built10.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built11.jpg"><img src="images/built11.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built12.jpg"><img src="images/built12.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built13.jpg"><img src="images/built13.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built14.jpg"><img src="images/built14.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built15.jpg"><img src="images/built15.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built16.jpg"><img src="images/built16.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built17.jpg"><img src="images/built17.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built18.jpg"><img src="images/built18.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built19.jpg"><img src="images/built19.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built20.jpg"><img src="images/built20.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built21.jpg"><img src="images/built21.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built22.jpg"><img src="images/built22.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built23.jpg"><img src="images/built23.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built24.jpg"><img src="images/built24.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built25.jpg"><img src="images/built25.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built26.jpg"><img src="images/built26.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built27.jpg"><img src="images/built27.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built28.jpg"><img src="images/built28.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built29.jpg"><img src="images/built29.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built30.jpg"><img src="images/built30.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built31.jpg"><img src="images/built31.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built32.jpg"><img src="images/built32.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built33.jpg"><img src="images/built33.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built34.jpg"><img src="images/built34.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="images/built35.jpg"><img src="images/built35.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
 
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="Retaining Line" data-description="Built" data-image="images/retaining-line.jpg">
-            <img src="images/retaining-line.jpg" alt="Architectural or built structure" />
-            <div class="gallery-caption"><strong>Retaining Line</strong><span>Built</span></div>
-          </article>
-
-          <article class="gallery-item" tabindex="0" 
-
-          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="Water Memory" data-description="Borrowed" data-image="images/water-memory.jpg">
-            <img src="images/water-memory.jpg" alt="Lake or ocean scene" />
-            <div class="gallery-caption"><strong>Water Memory</strong><span>Borrowed</span></div>
-          </article>
-
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="Concrete Quiet" data-description="Built" data-image="images/concrete-quiet.jpg">
-            <img src="images/concrete-quiet.jpg" alt="Building detail" />
-            <div class="gallery-caption"><strong>Concrete Quiet</strong><span>Built</span></div>
-          </article>
-
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="Where It Gives" data-description="Between" data-image="images/where-it-gives.jpg">
-            <img src="images/where-it-gives.jpg" alt="Boundary between built and natural space" />
-            <div class="gallery-caption"><strong>Where It Gives</strong><span>Between</span></div>
-          </article>
-
-          <article class="gallery-item" tabindex="0" 
+          <!-- Borrowed images -->
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed1.jpg"><img src="images/borrowed1.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed2.jpg"><img src="images/borrowed2.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed3.jpg"><img src="images/borrowed3.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed4.jpg"><img src="images/borrowed4.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed5.jpg"><img src="images/borrowed5.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed6.jpg"><img src="images/borrowed6.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed7.jpg"><img src="images/borrowed7.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed8.jpg"><img src="images/borrowed8.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed9.jpg"><img src="images/borrowed9.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed10.jpg"><img src="images/borrowed10.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed11.jpg"><img src="images/borrowed11.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed12.jpg"><img src="images/borrowed12.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed13.jpg"><img src="images/borrowed13.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed14.jpg"><img src="images/borrowed14.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed15.jpg"><img src="images/borrowed15.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed16.jpg"><img src="images/borrowed16.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed17.jpg"><img src="images/borrowed17.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed18.jpg"><img src="images/borrowed18.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed19.jpg"><img src="images/borrowed19.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed20.jpg"><img src="images/borrowed20.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed21.jpg"><img src="images/borrowed21.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed22.jpg"><img src="images/borrowed22.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed23.jpg"><img src="images/borrowed23.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed24.jpg"><img src="images/borrowed24.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed25.jpg"><img src="images/borrowed25.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed26.jpg"><img src="images/borrowed26.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed27.jpg"><img src="images/borrowed27.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed28.jpg"><img src="images/borrowed28.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed29.jpg"><img src="images/borrowed29.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed30.jpg"><img src="images/borrowed30.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed31.jpg"><img src="images/borrowed31.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed32.jpg"><img src="images/borrowed32.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed33.jpg"><img src="images/borrowed33.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed34.jpg"><img src="images/borrowed34.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed35.jpg"><img src="images/borrowed35.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed36.jpg"><img src="images/borrowed36.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed37.jpg"><img src="images/borrowed37.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed38.jpg"><img src="images/borrowed38.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed39.jpg"><img src="images/borrowed39.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed40.jpg"><img src="images/borrowed40.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed41.jpg"><img src="images/borrowed41.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed42.jpg"><img src="images/borrowed42.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed43.jpg"><img src="images/borrowed43.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed44.jpg"><img src="images/borrowed44.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed45.jpg"><img src="images/borrowed45.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed46.jpg"><img src="images/borrowed46.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed47.jpg"><img src="images/borrowed47.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed48.jpg"><img src="images/borrowed48.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed49.jpg"><img src="images/borrowed49.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed50.jpg"><img src="images/borrowed50.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed51.jpg"><img src="images/borrowed51.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed52.jpg"><img src="images/borrowed52.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed53.jpg"><img src="images/borrowed53.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed54.jpg"><img src="images/borrowed54.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed55.jpg"><img src="images/borrowed55.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed56.jpg"><img src="images/borrowed56.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed57.jpg"><img src="images/borrowed57.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed58.jpg"><img src="images/borrowed58.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed59.jpg"><img src="images/borrowed59.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed60.jpg"><img src="images/borrowed60.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed61.jpg"><img src="images/borrowed61.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed62.jpg"><img src="images/borrowed62.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed63.jpg"><img src="images/borrowed63.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed64.jpg"><img src="images/borrowed64.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed65.jpg"><img src="images/borrowed65.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed66.jpg"><img src="images/borrowed66.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed67.jpg"><img src="images/borrowed67.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed68.jpg"><img src="images/borrowed68.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed69.jpg"><img src="images/borrowed69.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed70.jpg"><img src="images/borrowed70.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed71.jpg"><img src="images/borrowed71.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed72.jpg"><img src="images/borrowed72.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed73.jpg"><img src="images/borrowed73.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed74.jpg"><img src="images/borrowed74.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed75.jpg"><img src="images/borrowed75.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed76.jpg"><img src="images/borrowed76.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed77.jpg"><img src="images/borrowed77.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed78.jpg"><img src="images/borrowed78.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed79.jpg"><img src="images/borrowed79.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed80.jpg"><img src="images/borrowed80.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed81.jpg"><img src="images/borrowed81.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed82.jpg"><img src="images/borrowed82.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed83.jpg"><img src="images/borrowed83.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed84.jpg"><img src="images/borrowed84.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed85.jpg"><img src="images/borrowed85.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed86.jpg"><img src="images/borrowed86.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed87.jpg"><img src="images/borrowed87.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed88.jpg"><img src="images/borrowed88.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed89.jpg"><img src="images/borrowed89.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed90.jpg"><img src="images/borrowed90.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed91.jpg"><img src="images/borrowed91.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed92.jpg"><img src="images/borrowed92.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed93.jpg"><img src="images/borrowed93.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed94.jpg"><img src="images/borrowed94.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed95.jpg"><img src="images/borrowed95.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed96.jpg"><img src="images/borrowed96.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed97.jpg"><img src="images/borrowed97.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed98.jpg"><img src="images/borrowed98.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed99.jpg"><img src="images/borrowed99.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed100.jpg"><img src="images/borrowed100.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed101.jpg"><img src="images/borrowed101.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed102.jpg"><img src="images/borrowed102.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed103.jpg"><img src="images/borrowed103.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed104.jpg"><img src="images/borrowed104.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed105.jpg"><img src="images/borrowed105.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
+          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="images/borrowed106.jpg"><img src="images/borrowed106.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
         </div>
       </div>
     </section>
@@ -615,11 +780,11 @@
     <section id="about">
       <div class="container about-grid">
         <div class="panel">
-          <img class="about-image" src="images/about-image.jpg" alt="Landscape photograph" />
+          <img class="about-image" src="images/strazds.jpg" alt="Laila Strazds" />
           <div class="meta-stack">
             <div>
               <div class="meta-label">Research interests</div>
-              <div class="meta-value">Relationality, intra-action, ecological entanglement, mental health, imagination, multispecies futures, arts-based and immersive inquiry</div>
+              <div class="meta-value">Relationality, intra-action, ecological entanglement, mental health, imagination, and more liveable futures</div>
             </div>
             <div>
               <div class="meta-label">Based in</div>
@@ -643,7 +808,6 @@
             <p>
               Much of this work is informed by my broader research interests in relationality, intra-action, ecological entanglement, mental health, and the role of imagination in sensing and creating more liveable futures. I am interested in how art can help us feel our relation within the world rather than reinforce the myth of being separate from it. In this sense, photography becomes not only an aesthetic practice, but also a way of noticing how place acts on us, how we act within it, and how life itself is co-constituted.
             </p>
-            </p>
           </div>
         </div>
       </div>
@@ -655,15 +819,14 @@
           <div>
             <span class="section-kicker">Contact</span>
             <h2 class="section-title">Get in touch</h2>
-            <p class="section-subtitle">.</p>
+            <p class="section-subtitle">For collaborations, exhibitions, prints, or conversation.</p>
           </div>
         </div>
 
         <div class="panel">
-          <p>For collaborations, exhibitions, prints, or conversation:</p>
           <div class="button-row">
-            <a class="button button-primary" href="mailto:laila.strazds@gmail.com">Email</a>
-            <a class="button" href="https://instagram.com/laila.strazds" target="_blank" rel="noreferrer">Instagram</a>
+            <a class="button button-primary" href="mailto:laila.strazds@gmail.com">laila.strazds@gmail.com</a>
+            <a class="button" href="https://www.instagram.com/laila.strazds" target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </div>
       </div>
