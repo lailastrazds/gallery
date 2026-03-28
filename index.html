@@ -4,10 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Laila Strazds | Gallery</title>
-  <meta name="description" content="A minimalist gallery website for landscape images, visual research, and photographic entanglements." />
+  <meta
+    name="description"
+    content="A minimalist gallery website for landscape images, visual research, and photographic entanglements."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     :root {
       --bg: #ecebe8;
@@ -16,8 +23,6 @@
       --muted: #5e5c57;
       --line: #d3cec6;
       --max: 1440px;
-      --gap: 26px;
-      --shadow: 0 8px 24px rgba(0,0,0,0.03);
       --header-font: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
       --mono-font: "IBM Plex Mono", monospace;
     }
@@ -85,9 +90,9 @@
     .chip,
     .meta-label,
     .footer-row,
-    .lightbox-meta p,
     .section-kicker,
-    .hero-note {
+    .hero-note,
+    .lightbox-counter {
       font-family: var(--mono-font);
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -141,7 +146,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      grid-template-columns: 1fr;
       gap: 42px;
       align-items: start;
     }
@@ -164,19 +169,19 @@
 
     h1 {
       font-size: clamp(3.2rem, 8vw, 7.4rem);
-      max-width: 10ch;
+      max-width: 12ch;
       margin-bottom: 20px;
     }
 
     .hero-copy p {
-      max-width: 42rem;
+      max-width: 44rem;
       margin: 0 0 28px;
       color: var(--muted);
       font-size: 1.06rem;
     }
 
     .hero-note {
-      max-width: 34rem;
+      max-width: 36rem;
       color: var(--muted);
       font-size: 0.72rem;
       line-height: 1.7;
@@ -218,21 +223,6 @@
       color: var(--surface);
     }
 
-    .hero-image-wrap {
-      padding: 0;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-    }
-
-    .hero-image {
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      width: 100%;
-      border: 1px solid rgba(211, 206, 198, 0.95);
-      background: #fff;
-    }
-
     section {
       padding: 42px 0 84px;
     }
@@ -250,17 +240,11 @@
       margin-bottom: 8px;
     }
 
-    .section-subtitle {
-      max-width: 46rem;
-      color: var(--muted);
-      margin: 0;
-    }
-
     .filter-bar {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin: 0 0 34px;
+      margin: 0 0 28px;
     }
 
     .chip {
@@ -284,7 +268,7 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 34px 30px;
+      gap: 20px;
     }
 
     .gallery-item {
@@ -302,37 +286,17 @@
       object-fit: cover;
       border: 1px solid rgba(211, 206, 198, 0.95);
       background: #fff;
-      transition: transform 0.35s ease, opacity 0.25s ease;
+      transition: transform 0.3s ease, opacity 0.2s ease;
     }
 
     .gallery-item:hover img,
     .gallery-item:focus-visible img {
       transform: translateY(-2px);
-      opacity: 0.96;
+      opacity: 0.97;
     }
 
     .gallery-caption {
-      position: static;
-      padding: 10px 0 0;
-      background: transparent;
-      color: var(--text);
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-
-    .gallery-caption strong {
       display: none;
-    }
-
-    .gallery-caption span {
-      display: inline-block;
-      margin-top: 0;
-      font-family: var(--mono-font);
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
     }
 
     .about-grid {
@@ -423,7 +387,7 @@
       width: min(1180px, 100%);
       display: grid;
       justify-items: center;
-      gap: 18px;
+      gap: 16px;
     }
 
     .lightbox img {
@@ -441,9 +405,9 @@
       color: #f4f1ea;
     }
 
-    .lightbox-meta h3,
-    .lightbox-meta p {
-      display: none;
+    .lightbox-counter {
+      font-size: 0.75rem;
+      color: rgba(244, 241, 234, 0.72);
     }
 
     .lightbox-close,
@@ -465,7 +429,6 @@
     .lightbox-nav.next { right: 16px; }
 
     @media (max-width: 1080px) {
-      .hero-grid,
       .about-grid {
         grid-template-columns: 1fr;
       }
@@ -493,7 +456,7 @@
 
       .gallery-grid {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 20px;
       }
 
       .lightbox {
@@ -513,7 +476,7 @@
     <div class="container nav">
       <a class="brand" href="#top">
         <span class="brand-name">Laila Strazds</span>
-        <span class="brand-tag">Photographic works / built-form, borrowed, between</span>
+        <span class="brand-tag">Photographic works / built, borrowed, between</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#gallery">Gallery</a>
@@ -527,7 +490,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Landscape / built-form / relation</span>
+          <span class="eyebrow">Landscape / built / relation</span>
           <h1>Images gathered at the edges of relation.</h1>
           <p>
             These images gather moments in time and embeddedness. In them, I return to the reciprocity between ourselves and our surroundings—the ways we move our environment, and the ways the environment moves us in return. This collection holds fragments of that relation, of being embedded within a world that is always in motion.
@@ -537,11 +500,8 @@
             <a class="button" href="#about">Read statement</a>
           </div>
           <p class="hero-note">
-            Categories are organized as <strong>Borrowed</strong>, <strong>Built-form</strong>, and <strong>Between</strong>—a way of holding land, structure, and the spaces of relation that cannot be cleanly separated.
+            Categories are organized as <strong>Borrowed</strong>, <strong>Built</strong>, and <strong>Between</strong>—a way of holding land, structure, and the spaces of relation that cannot be cleanly separated.
           </p>
-        </div>
-        <div class="hero-image-wrap">
-          <img class="hero-image" src="open.png" alt="Featured image" />
         </div>
       </div>
     </section>
@@ -552,121 +512,258 @@
           <div>
             <span class="section-kicker">Selected works</span>
             <h2 class="section-title">Gallery</h2>
-            <p class="section-subtitle">A clean square grid for white-framed images, organized by built-form, borrowed, and between.</p>
           </div>
         </div>
 
         <div class="filter-bar" aria-label="Gallery filters">
           <button class="chip active" data-filter="all">All</button>
           <button class="chip" data-filter="borrowed">Borrowed</button>
-          <button class="chip" data-filter="built">Built-form</button>
+          <button class="chip" data-filter="built">Built</button>
           <button class="chip" data-filter="between">Between</button>
         </div>
 
-        <div class="gallery-grid" id="galleryGrid">
-          <!-- Between images -->
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between1.jpg"><img src="between1.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between2.jpg"><img src="between2.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between3.jpg"><img src="between3.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between4.jpg"><img src="between4.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between5.jpg"><img src="between5.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between6.jpg"><img src="between6.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between7.jpg"><img src="between7.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between8.jpg"><img src="between8.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between9.jpg"><img src="between9.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between10.jpg"><img src="between10.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between11.jpg"><img src="between11.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between12.jpg"><img src="between12.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between13.jpg"><img src="between13.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between14.jpg"><img src="between14.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between15.jpg"><img src="between15.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between16.jpg"><img src="between16.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between17.jpg"><img src="between17.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between18.jpg"><img src="between18.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between19.jpg"><img src="between19.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between20.jpg"><img src="between20.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between21.jpg"><img src="between21.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between22.jpg"><img src="between22.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between23.jpg"><img src="between23.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between24.jpg"><img src="between24.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between25.jpg"><img src="between25.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between26.jpg"><img src="between26.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between27.jpg"><img src="between27.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between28.jpg"><img src="between28.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between29.jpg"><img src="between29.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between30.jpg"><img src="between30.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between31.jpg"><img src="between31.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between32.jpg"><img src="between32.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between33.jpg"><img src="between33.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between34.jpg"><img src="between34.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between35.jpg"><img src="between35.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between36.jpg"><img src="between36.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between37.jpg"><img src="between37.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between38.jpg"><img src="between38.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between39.jpg"><img src="between39.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between40.jpg"><img src="between40.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between41.jpg"><img src="between41.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between42.jpg"><img src="between42.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between43.jpg"><img src="between43.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between44.jpg"><img src="between44.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between45.jpg"><img src="between45.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between46.jpg"><img src="between46.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between47.jpg"><img src="between47.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between48.jpg"><img src="between48.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between49.jpg"><img src="between49.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between50.jpg"><img src="between50.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between51.jpg"><img src="between51.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between52.jpg"><img src="between52.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between53.jpg"><img src="between53.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between54.jpg"><img src="between54.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between55.jpg"><img src="between55.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between56.jpg"><img src="between56.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between57.jpg"><img src="between57.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between58.jpg"><img src="between58.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between59.jpg"><img src="between59.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between60.jpg"><img src="between60.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between61.jpg"><img src="between61.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between62.jpg"><img src="between62.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="between" data-title="" data-description="" data-image="between63.jpg"><img src="between63.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Between</span></div></article>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
 
-          <!-- Built-form images -->
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built1.jpg"><img src="built1.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built2.jpg"><img src="built2.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built3.jpg"><img src="built3.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built4.jpg"><img src="built4.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built5.jpg"><img src="built5.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built6.jpg"><img src="built6.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built7.jpg"><img src="built7.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built8.jpg"><img src="built8.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built9.jpg"><img src="built9.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built10.jpg"><img src="built10.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built11.jpg"><img src="built11.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built12.jpg"><img src="built12.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built13.jpg"><img src="built13.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built14.jpg"><img src="built14.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built15.jpg"><img src="built15.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built16.jpg"><img src="built16.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built17.jpg"><img src="built17.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built18.jpg"><img src="built18.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built19.jpg"><img src="built19.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built20.jpg"><img src="built20.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built21.jpg"><img src="built21.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built22.jpg"><img src="built22.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built23.jpg"><img src="built23.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built24.jpg"><img src="built24.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built25.jpg"><img src="built25.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built26.jpg"><img src="built26.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built27.jpg"><img src="built27.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built28.jpg"><img src="built28.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built29.jpg"><img src="built29.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built30.jpg"><img src="built30.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built31.jpg"><img src="built31.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built32.jpg"><img src="built32.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built33.jpg"><img src="built33.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built34.jpg"><img src="built34.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="built" data-title="" data-description="" data-image="built35.jpg"><img src="built35.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Built-form</span></div></article>
+    <section id="about">
+      <div class="container about-grid">
+        <div class="panel">
+          <img class="about-image" src="strazds.jpg" alt="Laila Strazds" />
+          <div class="meta-stack">
+            <div>
+              <div class="meta-label">Research interests</div>
+              <div class="meta-value">
+                Relationality, intra-action, ecological entanglement, mental health, imagination, and more liveable futures
+              </div>
+            </div>
+            <div>
+              <div class="meta-label">Based in</div>
+              <div class="meta-value">Toronto, Canada</div>
+            </div>
+          </div>
+        </div>
 
-          <!-- Borrowed images -->
-          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="borrowed1.jpg"><img src="borrowed1.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
-          <article class="gallery-item" tabindex="0" data-category="borrowed" data-title="" data-description="" data-image="borrowed2.jpg"><img src="borrowed2.jpg" alt="" /><div class="gallery-caption"><strong></strong><span>Borrowed</span></div></article>
-          <article c
+        <div>
+          <div class="section-header">
+            <div>
+              <span class="section-kicker">About / artist statement</span>
+              <h2 class="section-title">Statement</h2>
+            </div>
+          </div>
+
+          <div class="panel">
+            <p>
+              I am drawn to creation as a way of studying relation. These photographs begin with landscape, atmosphere, and the built environment, but they are less about documenting scene than about tracing encounter—how bodies, weather, structure, memory, and more-than-human life participate in shaping what becomes visible.
+            </p>
+            <p>
+              Much of this work is informed by my broader research interests in relationality, intra-action, ecological entanglement, mental health, and the role of imagination in sensing and creating more liveable futures. I am interested in how art can help us feel our relation within the world rather than reinforce the myth of being separate from it. In this sense, photography becomes not only an aesthetic practice, but also a way of noticing how place acts on us, how we act within it, and how life itself is co-constituted.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Contact</span>
+            <h2 class="section-title">Get in touch</h2>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="button-row">
+            <a class="button button-primary" href="mailto:laila.strazds@gmail.com">Email</a>
+            <a class="button" href="https://www.instagram.com/laila.strazds" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Laila Strazds</span>
+      <span>Built for GitHub Pages</span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Expanded gallery image">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">✕</button>
+    <button class="lightbox-nav prev" id="prevBtn" aria-label="Previous image">←</button>
+
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="Expanded gallery image" />
+      <div class="lightbox-meta">
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+      </div>
+    </div>
+
+    <button class="lightbox-nav next" id="nextBtn" aria-label="Next image">→</button>
+  </div>
+
+  <script>
+    const galleryGrid = document.getElementById("galleryGrid");
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    const year = document.getElementById("year");
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const lightboxCounter = document.getElementById("lightboxCounter");
+
+    year.textContent = new Date().getFullYear();
+
+    function buildImageList(prefix, count, category, label) {
+      return Array.from({ length: count }, (_, i) => ({
+        filename: `${prefix}${i + 1}.jpg`,
+        category,
+        label
+      }));
+    }
+
+    function shuffle(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function intermixCategories(groups) {
+      const keys = Object.keys(groups);
+      const shuffledGroups = {};
+
+      keys.forEach(key => {
+        shuffledGroups[key] = shuffle(groups[key]);
+      });
+
+      const result = [];
+      let lastCategory = null;
+
+      while (keys.some(key => shuffledGroups[key].length > 0)) {
+        const available = keys.filter(
+          key => shuffledGroups[key].length > 0 && key !== lastCategory
+        );
+
+        const fallback = keys.filter(key => shuffledGroups[key].length > 0);
+        const pool = available.length ? available : fallback;
+        const nextCategory = pool[Math.floor(Math.random() * pool.length)];
+
+        result.push(shuffledGroups[nextCategory].shift());
+        lastCategory = nextCategory;
+      }
+
+      return result;
+    }
+
+    const betweenImages = buildImageList("between", 63, "between", "Between");
+    const builtImages = buildImageList("built", 35, "built", "Built");
+    const borrowedImages = buildImageList("borrowed", 106, "borrowed", "Borrowed");
+
+    const allImages = intermixCategories({
+      between: betweenImages,
+      built: builtImages,
+      borrowed: borrowedImages
+    });
+
+    function renderGallery(images) {
+      galleryGrid.innerHTML = images.map((image, index) => `
+        <article
+          class="gallery-item"
+          tabindex="0"
+          data-category="${image.category}"
+          data-image="${image.filename}"
+          data-index="${index}"
+        >
+          <img src="${image.filename}" alt="" />
+          <div class="gallery-caption"><span>${image.label}</span></div>
+        </article>
+      `).join("");
+    }
+
+    renderGallery(allImages);
+
+    let galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
+    let visibleItems = [...galleryItems];
+    let currentIndex = 0;
+
+    function applyFilter(filter) {
+      galleryItems.forEach(item => {
+        const category = item.dataset.category;
+        const show = filter === "all" || category === filter;
+        item.style.display = show ? "block" : "none";
+      });
+
+      visibleItems = galleryItems.filter(item => item.style.display !== "none");
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        chips.forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        applyFilter(chip.dataset.filter);
+      });
+    });
+
+    function updateLightbox(item) {
+      lightboxImg.src = item.dataset.image;
+      const visibleIndex = visibleItems.indexOf(item);
+      lightboxCounter.textContent = `${visibleIndex + 1} / ${visibleItems.length}`;
+    }
+
+    function openLightbox(item) {
+      visibleItems = galleryItems.filter(entry => entry.style.display !== "none");
+      currentIndex = visibleItems.indexOf(item);
+      updateLightbox(item);
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function moveLightbox(step) {
+      if (!visibleItems.length) return;
+      currentIndex = (currentIndex + step + visibleItems.length) % visibleItems.length;
+      updateLightbox(visibleItems[currentIndex]);
+    }
+
+    galleryItems.forEach(item => {
+      item.addEventListener("click", () => openLightbox(item));
+      item.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox(item);
+        }
+      });
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    prevBtn.addEventListener("click", () => moveLightbox(-1));
+    nextBtn.addEventListener("click", () => moveLightbox(1));
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (!lightbox.classList.contains("open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowRight") moveLightbox(1);
+      if (event.key === "ArrowLeft") moveLightbox(-1);
+    });
+
+    applyFilter("all");
+  </script>
+</body>
+</html>
